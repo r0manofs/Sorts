@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class MyBuble {
 
     public static void main(String[] args) {
-        /*
+/*
         Scanner scanner = new Scanner(System.in);
         int[] a = new int[100];
 
@@ -15,20 +15,25 @@ public class MyBuble {
             a[i]=scanner.nextInt();
         }
 
-         */
-        int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+ */
+        int[] array = new int[10000];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i]=((int)(Math.random()*10000)-5000);        //заполняем массив рандомными значениями от -5000 до 5000
+        }
+
 
         Date date = new Date();
         Date before = new Date();       // засекаем время
 
-        for (int j = 0; j < a.length - 1; j++) {           //это для последующих итераций/
-            for (int i = 1; i < a.length - j; i++) {        //это одна итерация/ самое большое число отправляется в
-                if (a[i] < a[i - 1]) {                      //конец массива / длинна массива - j потому что самый большой
+        for (int j = 0; j < array.length - 1; j++) {           //это для последующих итераций/
+            for (int i = 1; i < array.length - j; i++) {        //это одна итерация/ самое большое число отправляется в
+                if (array[i] < array[i - 1]) {                      //конец массива / длинна массива - j потому что самый большой
                     // элемент уже отправлен в конец массива
-                    int buffer = a[i];
-                    int buffer2 = a[i - 1];
-                    a[i - 1] = buffer;
-                    a[i] = buffer2;
+                    int buffer = array[i];
+                    int buffer2 = array[i - 1];
+                    array[i - 1] = buffer;
+                    array[i] = buffer2;
 
                 }
             }
@@ -37,9 +42,9 @@ public class MyBuble {
         Date after = new Date();
         double time = after.getTime() - before.getTime(); //время после сортировки
 
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(array));
         System.out.println(time);
     }
 }
 
-// от 99 до 0 за 1.0 / в 6 раз быстрее глупой сортировки
+// 10000 чисел / от 68 до 102/ намного быстрее глупой сортировки/

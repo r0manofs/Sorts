@@ -15,7 +15,13 @@ public class StupidSort {
         }
          */
 
-        int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        //int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+
+        int[] a = new int[500];
+
+        for (int i = 0; i < a.length; i++) {
+            a[i]=((int)(Math.random()*500)-300);        //заполняем массив рандомными значениями от -300 до 300
+        }
 
         Date date = new Date();
         Date before = new Date();
@@ -39,4 +45,4 @@ public class StupidSort {
         System.out.println(time);
     }
 }
-//  от 99 до 0 за 6.0
+//  500 за 14.0
