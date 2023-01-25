@@ -2,20 +2,9 @@ package Bubble;
 
 import java.util.Arrays;
 import java.util.Date;
-import java.util.Scanner;
 
 public class StupidSort {
     public static void main(String[] args) {
-        /*
-        Scanner scanner = new Scanner(System.in);
-        int[] a = new int[100];
-
-        for (int i = 0; i < a.length; i++) {        // вводим массив с клавиатуры
-            a[i]=scanner.nextInt();
-        }
-         */
-
-        //int[] a = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
         int[] a = new int[500];
 
