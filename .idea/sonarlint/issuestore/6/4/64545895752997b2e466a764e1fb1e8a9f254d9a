@@ -1,0 +1,14 @@
+
+r	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(•·ÈŠüÿÿÿÿ
+m	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(Î…ÒÄ
+`
+java:S2184"ECast one of the operands of this subtraction operation to a "double".(³Îœñûÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(©¶ Ê
+S
+java:S1854"8Remove this useless assignment to local variable "date".(”Ç©šùÿÿÿÿ
+D
+java:S2140")Use "java.util.Random.nextInt()" instead.(ô¶¢ºøÿÿÿÿ
+D
+java:S1481")Remove this unused "date" local variable.(”Ç©šùÿÿÿÿ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(§Ä©¯
+S	java:S106""9Replace this use of System.out or System.err by a logger.(ûÛÏçùÿÿÿÿ
