@@ -3,18 +3,18 @@ package SortType;
 public class Sort {
     public static void stupidSort(int[] array) {
         printArray(array);
-
-        for (int i = 1; i <= array.length - 1; ) {
-            if (array[i] < array[i - 1]) {
-
-                int buffer = array[i];
-                int buffer2 = array[i - 1];
-                array[i - 1] = buffer;
-                array[i] = buffer2;
-                i = 0;
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; ) {
+                printArray(array);
+                if (array[i] > array[i + 1]) {
+                    swap(array,i,i+1);
+                    isSorted = false;
+                    i -= i;
+                }
+                i++;
             }
-            i++;
-            printArray(array);
         }
     }
 
@@ -26,9 +26,7 @@ public class Sort {
             isSorted = true;
             for (int i = 1; i < array.length; i++) {
                 if (array[i] < array[i - 1]) {
-                    int tmp = array[i];
-                    array[i] = array[i - 1];
-                    array[i - 1] = tmp;
+                    swap(array,i,i-1);
                     isSorted = false;
                 }
             }
@@ -40,21 +38,15 @@ public class Sort {
         printArray(array);
 
         for (int j = 0; j < array.length - j; j++) {
-            int buffer;
             for (int i = 0; i < array.length - j - 1; i++) {
                 if (array[i] > array[i + 1]) {
-
-                    buffer = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = buffer;
+                    swap(array, i, i + 1);
                 }
             }
             for (int i = array.length - 1 - j; i > 1; i--) {
 
                 if (array[i] < array[i - 1]) {
-                    buffer = array[i];
-                    array[i] = array[i - 1];
-                    array[i - 1] = buffer;
+                    swap(array, i, i - 1);
                 }
             }
             printArray(array);
@@ -66,9 +58,7 @@ public class Sort {
             printArray(array);
             int index = min(array, step);        //step как раз и будет задавать смещение
 
-            int tmp = array[step];
-            array[step] = array[index];
-            array[index] = tmp;
+            swap(array, step, index);
         }
     }
 
@@ -82,6 +72,12 @@ public class Sort {
             }
         }
         return minIndex;
+    }
+
+    private static void swap(int[] array, int index1, int index2) {
+        int tmp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = tmp;
     }
 
     public static void printArray(int[] array) {
